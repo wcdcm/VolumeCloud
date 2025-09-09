@@ -3,7 +3,7 @@
    
     HLSLINCLUDE
 
-#include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
+#include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"//引入 Unity PostProcessing 的标准 HLSL 函数库，它提供了一系列常用函数和宏，方便你在自定义 Shader 中直接调用，而不用自己重新写。
 
             float _step;
             float _rayStep;
@@ -29,7 +29,7 @@
             float _detailNoiseWeight;
 
             TEXTURE2D_SAMPLER2D(_CameraDepthTexture, sampler_CameraDepthTexture);
-            TEXTURE2D_SAMPLER2D(_LowDepthTexture, sampler_LowDepthTexture);
+            TEXTURE2D_SAMPLER2D(_LowDepthTexture, sampler_LowDepthTexture);//TEXTURE2D_SAMPLER2D 是 PostProcessing Stack 封装的宏，它同时定义纹理和采样器
             TEXTURE2D_SAMPLER2D(_DownsampleColor, sampler_DownsampleColor);
 			TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
 
@@ -161,6 +161,7 @@
             // dstA是dst在射线后相交的, dstB是dst到正向交集
             // case 3: 射线没有相交 (dstA > dstB)
 
+            //光线步进
             float3 lightmarch(float3 position ,float dstTravelled)
             {
                 float3 dirToLight = _WorldSpaceLightPos0.xyz;
@@ -187,7 +188,7 @@
 			float4 Frag(VaryingsDefault i) : SV_Target
 			{
                 float depth = SAMPLE_DEPTH_TEXTURE(_LowDepthTexture, sampler_LowDepthTexture, i.texcoordStereo);
-                float3 rayPos = _WorldSpaceCameraPos;
+                float3 rayPos = _WorldSpaceCameraPos;//射线位置（是世界空间下的摄像机位置）
                 
                
                 //世界空间坐标
@@ -244,6 +245,7 @@
 
 			}
 
+            //降采样
             float DownsampleDepth(VaryingsDefault i) : SV_Target
             {
                 float2 texelSize = 0.5 * _CameraDepthTexture_TexelSize.xy;

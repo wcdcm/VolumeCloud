@@ -21,7 +21,7 @@ MonoBehaviour:
     value: 0
   LightColour:
     overrideState: 1
-    value: {r: 1.33, g: 0.98, b: 0.69, a: 1}
+    value: {r: 1, g: 0.8470869, b: 0.7216981, a: 1}
   RayRange:
     overrideState: 1
     value: 0.94
@@ -1610,11 +1610,11 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   noise3D:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 11700000, guid: cb4b6eb5c9e81414487f4f275cfce048, type: 2}
     defaultState: 1
   noiseDetail3D:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 11700000, guid: dde5d5a1451767d48b0ea30f597f1983, type: 2}
     defaultState: 1
   shapeTiling:
@@ -1624,15 +1624,15 @@ MonoBehaviour:
     overrideState: 1
     value: 0.022
   weatherMap:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 2800000, guid: bc830ae7850741344b2f0b6671d6de80, type: 3}
     defaultState: 1
   maskNoise:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 2800000, guid: f9bcaf1da924d0742b9c341e5d80235f, type: 3}
     defaultState: 1
   blueNoise:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 2800000, guid: d25158ef7a361f6409bbeb2b86bb2118, type: 3}
     defaultState: 1
   colA:
@@ -1688,4 +1688,4 @@ MonoBehaviour:
     value: 6.4
   xy_Speed_zw_Warp:
     overrideState: 1
-    value: {x: 0.05, y: 0.3, z: 0, w: 8}
+    value: {x: 0.02, y: 0.3, z: 0, w: 8}
